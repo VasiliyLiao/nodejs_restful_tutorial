@@ -4,12 +4,12 @@ const Card = require('mongoose').model('Card');
 router.param('id', function(req, res, next) {
   const id = req.params.id;
   Card.findOneById(id, function(err, card) {
-    if (err) {
-      return res.status(500).json({
-        statusCode: 500,
-        message: 'the server has error'
-      });
-    }
+    // if (err) {
+    //   return res.status(500).json({
+    //     statusCode: 500,
+    //     message: 'the server has error'
+    //   });
+    // }
 
     if (!card) {
       return res.status(404).json({

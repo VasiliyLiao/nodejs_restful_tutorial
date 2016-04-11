@@ -14,10 +14,10 @@ fs.readdirSync(entitiesDir)
     require(filePath);
     console.log('including entity:' + fileName + '\t entityPath: ' + filePath);
   });
-
-const connect = function() {
-  return mongoose.connect(DB_CONFIG.connect).connection;
-};
+  const connect = function() {
+    const dbConnectStr = DB_CONFIG.sql + '://' + DB_CONFIG.username + ':' + DB_CONFIG.password + '@' + DB_CONFIG.host + ':' + DB_CONFIG.port + '/' + DB_CONFIG.database;
+    return mongoose.connect(dbConnectStr).connection;
+  };
 
 module.exports = function() {
   const db = connect();
