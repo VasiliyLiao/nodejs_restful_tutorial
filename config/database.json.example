@@ -1,3 +1,8 @@
 {
-  "connect": "your mongodb address"
+  "sql": "mongodb",
+  "host": "your host ip",
+  "port": 27017,
+  "database": "your database name",
+  "username": "your sql account",
+  "password": "your sql password"
 }
